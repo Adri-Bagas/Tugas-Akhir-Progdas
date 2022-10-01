@@ -1,9 +1,9 @@
 <?php
-    include 'koneksi.php';
+    include 'connection.php';
 
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM user WHERE id_user = '$id'";
+    $sql = "SELECT * FROM users WHERE id_user = '$id'";
     $query = mysqli_query($connect, $sql);
 
     $data = mysqli_fetch_array($query);
@@ -165,9 +165,7 @@
                         <ul aria-expanded="false">
                             <li><a href="formUsers.php">User Form</a></li>
                             <li><a href="formMateri.php">Materi Form</a></li>
-                            <li><a href="#">Form2</a></li>
-                            <li><a href="#">Form5</a></li>
-                            <li><a href="#">Form4</a></li>
+                            <li><a href="formDaily.php">Daily Quotes</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
@@ -177,8 +175,19 @@
                         <ul aria-expanded="false">
                             <li><a href="User.php">User</a></li>
                             <li><a href="Materi.php">Materi</a></li>
+							<li><a href="Daily.php">Daily Quotes</a></li>
                         </ul>
                     </li>
+					<li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+						<i class="fas fa-file-alt"></i>
+						<span class="nav-text">Change</span>
+					</a>
+					<ul aria-expanded="false">
+						<li><a href="changeHero.php">Hero</a></li>
+						<li><a href="changeAbout.php">About</a></li>
+						<li><a href="changeHistory.php">World History</a></li>
+					</ul>
+				</li>
 
 				<div class="side-bar-profile">
 					<div class="d-flex align-items-center justify-content-between mb-3">
@@ -235,26 +244,30 @@
 							</div>
 							<div class="card-body">
 								<div class="basic-form">
-									<form action="addUser.php" method="POST" enctype="multipart/form-data">
+									<form action="updateUser.php" method="POST" enctype="multipart/form-data">
+										<div>
+											<h5>Id</h5>
+											<input type="text" class="form-control input-default " placeholder="id" name="id" value="<?php echo $data['id_user']?>">
+										</div>
 										<div>
 											<h5>Name</h5>
-											<input type="text" class="form-control input-default " placeholder="Name" name="nama">
+											<input type="text" class="form-control input-default " placeholder="Name" name="nama" value="<?php echo $data['name'] ?>">
 										</div>
 										<div class="ownForm">
 											<h5>Birth</h5>
-											<input type="date" class="form-control input-default " name="birth">
+											<input type="date" class="form-control input-default " name="birth" value="<?php echo $data['birth']?>">
 										</div>
 										<div class="ownForm">
 											<h5>Password</h5>
-											<input type="text" class="form-control input-default " placeholder="Password" name="password">
+											<input type="text" class="form-control input-default " placeholder="Password" name="password" value="<?php echo $data['password']?>">
 										</div>
 										<div class="ownForm">
 											<h5>Phone</h5>
-											<input type="text" class="form-control input-default " placeholder="Phone Number" name="phone">
+											<input type="text" class="form-control input-default " placeholder="Phone Number" name="phone" value="<?php echo $data['phone']?>">
 										</div>
 										<div class="ownForm">
 											<h5>Email</h5>
-											<input type="text" class="form-control input-default " placeholder="Email" name="email">
+											<input type="text" class="form-control input-default " placeholder="Email" name="email" value="<?php echo $data['email']?>">
 										</div>
                                         <div class="ownForm">
 											<h5>Profile</h5>

@@ -7,6 +7,7 @@
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
+        
 
         // uniq id
 

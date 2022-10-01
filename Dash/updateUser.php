@@ -7,10 +7,16 @@
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
+        $id = $_POST['id'];
 
-        // uniq id
 
-        $id_user = uniqid("U", false);
+        //get old data
+
+        $sqlOLD = "SELECT * FROM users WHERE id_user = '$id'";
+        $queryOLD = mysqli_query($connect, $sqlOLD);
+        $data = mysqli_fetch_array($queryOLD);
+
+        $imgDIROLD = $data['user_img'];
 
         //img upload
 
@@ -31,6 +37,9 @@
                 if(in_array($imgtype, $allowed)){
                     $imgNewName = uniqid('', true).".".$imgtype;
                     $imgDIR = "../user_img/".$imgNewName;
+                    if ($imgDIROLD != "../user_img/user.png") {
+                        unlink($imgDIROLD);
+                    };
                     move_uploaded_file($imgTMP, $imgDIR);
                 }else{
                     echo "Ext error";
@@ -39,10 +48,10 @@
                 echo "ERORR";
             }
         }else{
-            $imgDIR = "../user_img/user.png";
+            $imgDIR = $imgDIROLD;
         };
 
-        $sql = "INSERT INTO `users`(`id_user`, `name`, `birth`, `password`, `phone`, `email`, `user_img`) VALUES ('$id_user','$nama','$birth','$password','$phone','$email','$imgDIR')";
+        $sql = "UPDATE `users` SET `name`='$nama',`birth`='$birth',`password`='$password',`phone`='$phone',`email`='$email',`user_img`='$imgDIR' WHERE id_user = '$id'";
         $query = mysqli_query($connect, $sql);
 
         if($query) {

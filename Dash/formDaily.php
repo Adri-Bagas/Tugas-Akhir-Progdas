@@ -151,22 +151,31 @@
 							<span class="nav-text">Forms</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="form.html">Form</a></li>
-                            <li><a href="#">Form3</a></li>
-                            <li><a href="#">Form2</a></li>
-                            <li><a href="#">Form5</a></li>
-                            <li><a href="#">Form4</a></li>
+                            <li><a href="formUsers.php">User Form</a></li>
+                            <li><a href="formMateri.php">Materi Form</a></li>
+                            <li><a href="formDaily.php">Daily Quotes</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
 							<i class="fas fa-table"></i>
-							<span class="nav-text">Table</span>
+							<span class="nav-text">Data</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="table.html">Table2</a></li>
-                            <li><a href="#">Table1</a></li>
+                            <li><a href="User.php">User</a></li>
+                            <li><a href="Materi.php">Materi</a></li>
+							<li><a href="Daily.php">Daily Quotes</a></li>
                         </ul>
                     </li>
+					<li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+						<i class="fas fa-file-alt"></i>
+						<span class="nav-text">Change</span>
+					</a>
+					<ul aria-expanded="false">
+						<li><a href="changeHero.php">Hero</a></li>
+						<li><a href="changeAbout.php">About</a></li>
+						<li><a href="changeHistory.php">World History</a></li>
+					</ul>
+				</li>
 
 				<div class="side-bar-profile">
 					<div class="d-flex align-items-center justify-content-between mb-3">
@@ -211,7 +220,7 @@
 				<div class="row page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item active"><a href="javascript:void(0)">Form</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Bootstrap</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Materi</a></li>
 					</ol>
                 </div>
                 
@@ -223,29 +232,17 @@
 							</div>
 							<div class="card-body">
 								<div class="basic-form">
-									<form action="#">
-										<div>
-											<h5>Form 1</h5>
-											<input type="text" class="form-control input-default " placeholder="input-default">
+									<form action="addDaily.php" method="POST" enctype="multipart/form-data">
+                                    <div>
+											<h5>Hero</h5>
+											<input type="text" class="form-control input-default" placeholder="Title" name="hero">
 										</div>
 										<div class="ownForm">
-											<h5>Form 1</h5>
-											<input type="text" class="form-control input-default " placeholder="input-default">
+											<h5>quotes</h5>
+											<textarea class="form-control" rows="4" id="comment" name="quotes"></textarea>
 										</div>
-										<div class="ownForm">
-											<h5>Form 1</h5>
-											<input type="text" class="form-control input-default " placeholder="input-default">
-										</div>
-										<div class="ownForm">
-											<h5>Form 1</h5>
-											<input type="text" class="form-control input-default " placeholder="input-default">
-										</div>
-										<div class="ownForm">
-											<h5>textarea</h5>
-											<textarea class="form-control" rows="4" id="comment"></textarea>
-										</div>
-										<div class="col-12 ownForm">
-											<input type="submit" class="btn btn-primary mb-2" style="padding: 5px 40px; font-size: 14pt;">
+										<div class="col-12" style="margin-left: 75%; margin-top: 30px;">
+											<input type="submit" class="btn btn-primary mb-2" style="padding: 5px 40px; font-size: 14pt;" name="submit">
 										</div>
 									</form>
 								</div>
@@ -364,7 +361,7 @@
 		});
 		jQuery(document).ready(function(){
 			setTimeout(function(){
-				dlabSettingsOptions.version = 'dark';
+				dlabSettingsOptions.version = 'light';
 				new dlabSettings(dlabSettingsOptions);
 			},1500)
 		});

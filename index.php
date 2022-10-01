@@ -1,10 +1,58 @@
+<?php
+  include 'connection.php';
+
+  $getDataHero = "SELECT * FROM hero where id = 1";
+  $queryHero = mysqli_query($connect, $getDataHero);
+  $hero = mysqli_fetch_array($queryHero);
+
+  $getDataAbout = "SELECT * FROM about where id = 2";
+  $queryAbout = mysqli_query($connect, $getDataAbout);
+  $about = mysqli_fetch_array($queryAbout);
+
+  $getDataHistory = "SELECT * FROM history where id = 1";
+  $queryHistory = mysqli_query($connect, $getDataHistory);
+  $history = mysqli_fetch_array($queryHistory);
+
+  $latestQuote = "SELECT * FROM `daily` ORDER BY id DESC LIMIT 0,1";
+  $queryQuote = mysqli_query($connect, $latestQuote);
+  $quote = mysqli_fetch_array($queryQuote);
+
+  $latestMateri = "SELECT * FROM `materi` ORDER BY id DESC LIMIT 0,1";
+  $queryMateri0 = mysqli_query($connect, $latestMateri);
+  $materi0 = mysqli_fetch_array($queryMateri0);
+
+  $latestMateri1 = "SELECT * FROM `materi` ORDER BY id DESC LIMIT 1,1";
+  $queryMateri1 = mysqli_query($connect, $latestMateri1);
+  $materi1 = mysqli_fetch_array($queryMateri1);
+
+  $latestMateri2 = "SELECT * FROM `materi` ORDER BY id DESC LIMIT 2,1";
+  $queryMateri2 = mysqli_query($connect, $latestMateri2);
+  $materi2 = mysqli_fetch_array($queryMateri2);
+
+  $latestMateri3 = "SELECT * FROM `materi` ORDER BY id DESC LIMIT 3,1";
+  $queryMateri3 = mysqli_query($connect, $latestMateri3);
+  $materi3 = mysqli_fetch_array($queryMateri3);
+
+  $latestMateri4 = "SELECT * FROM `materi` ORDER BY id DESC LIMIT 4,1";
+  $queryMateri4 = mysqli_query($connect, $latestMateri4);
+  $materi4 = mysqli_fetch_array($queryMateri4);
+
+  $latestMateri5 = "SELECT * FROM `materi` ORDER BY id DESC LIMIT 5,1";
+  $queryMateri5 = mysqli_query($connect, $latestMateri5);
+  $materi5 = mysqli_fetch_array($queryMateri5);
+
+?>
+
+
+
+
           <!DOCTYPE html>
           <html lang="en">
           <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Lexavac Web Design</title>
+            <title>DENSETSU</title>
 
             <!-- --------- Unicons Icons --------- -->
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -51,7 +99,7 @@
                   </div>
 
                   <div class="gambar-log">
-                    <img src="/user (1) 1.svg" alt="">
+                    <img src="/img_land/user (1) 1.svg" alt="">
                   </div>
                 </nav>
 
@@ -73,12 +121,10 @@
                 
                 <div>
                   <h1 class="jud">
-                    DENSETSU NO <br>
-                    YUUSHA
+                    <?php echo $hero['Hero']?>
                   </h1>
                   <p class="par">
-                    Demikianlah penjelasan arti kata "densetsu (でんせつ)" jika diterjemakan dari bahasa Jepang ke dalam bahasa Indonesia dalam kamus Jepang-Indonesia.
-                    densetsu terdiri dari 8 karakter.
+                    <?php echo $hero['Sub_text']?>
                   </p>
                   <a href="" class="let">
                     Let's Explore 
@@ -94,7 +140,7 @@
                   <div></div>
                 </div>
                 <div class="eclip4">
-                  <img src="./img_land/Mask group.jpg" alt="">
+                  <img src="<?php echo $hero['img_dir']?>" alt="">
                 </div>
 
 
@@ -136,7 +182,7 @@
                     </div>
   
                     <div>
-                      <img class="im" src="./wallpaperflare.com_wallpaper(3).jpg" alt="">
+                      <img class="im" src="<?php echo $materi0['img_dir']?>" alt="">
                     </div>
   
                     <div class="strip">
@@ -144,16 +190,16 @@
                     </div>
   
                       <p class="his">
-                        History from japan
+                        History from <?php echo $materi0['Country']?>
                       </p>
 
                     
                       <h2 class="rev">
-                        MY REVOLUTIONARY <br> BULLSHITS ABOUT “ATOM”
+                        <?php echo strtoupper($materi0['Title'])?>
                       </h2>
 
-                      <p class="pr">
-                        Ingat Darah Keturunan Haisal Akan Mengalir ke anak cucunya dan dia akan tetap menjadi pengetroll bohong kalau tidak.
+                      <p class="pr" style="overflow: hidden; height: 90px;">
+                        <?php echo $materi0['Desk'] ?>
                       </p>
                     
                       <div class="liner">
@@ -161,7 +207,7 @@
                       </div>
   
                     <div class="btn-n">
-                      <div> <img src="./Vector.svg" alt=""> </div>
+                      <div> <a href=<?php echo "content.php?id=$materi0[id]"?>><img src="./img_land/Vector.svg" alt=""></a> </div>
                     </div>
                   </div>
 
@@ -171,7 +217,7 @@
                     </div>
   
                     <div>
-                      <img class="im" src="./wallpaperflare.com_wallpaper(3).jpg" alt="">
+                      <img class="im" src="<?php echo $materi1['img_dir']?>" alt="">
                     </div>
   
                     <div class="strip">
@@ -179,16 +225,16 @@
                     </div>
   
                       <p class="his">
-                        History from japan
+                        History from <?php echo $materi1['Country']?>
                       </p>
 
                     
                       <h2 class="rev">
-                        MY REVOLUTIONARY <br> BULLSHITS ABOUT “ATOM”
+                        <?php echo strtoupper($materi1['Title'])?>
                       </h2>
 
-                      <p class="pr">
-                        Ingat Darah Keturunan Haisal Akan Mengalir ke anak cucunya dan dia akan tetap menjadi pengetroll bohong kalau tidak.
+                      <p class="pr" style="overflow: hidden; height: 90px;">
+                        <?php echo $materi1['Desk']?>
                       </p>
                     
                       <div class="liner">
@@ -196,7 +242,7 @@
                       </div>
   
                     <div class="btn-n">
-                      <div> <img src="./Vector.svg" alt=""> </div>
+                      <div><a href=<?php echo "content.php?id=$materi1[id]" ?>><img src="./img_land/Vector.svg" alt=""></a></div>
                     </div>
                   </div>
 
@@ -206,7 +252,7 @@
                     </div>
   
                     <div>
-                      <img class="im" src="./wallpaperflare.com_wallpaper(3).jpg" alt="">
+                      <img class="im" src="<?php echo $materi2['img_dir']?>" alt="">
                     </div>
   
                     <div class="strip">
@@ -214,16 +260,16 @@
                     </div>
   
                       <p class="his">
-                        History from japan
+                        History from <?php echo $materi2['Country']?>
                       </p>
 
                     
                       <h2 class="rev">
-                        MY REVOLUTIONARY <br> BULLSHITS ABOUT “ATOM”
+                        <?php echo strtoupper($materi2['Title'])?>
                       </h2>
 
-                      <p class="pr">
-                        Ingat Darah Keturunan Haisal Akan Mengalir ke anak cucunya dan dia akan tetap menjadi pengetroll bohong kalau tidak.
+                      <p class="pr" style="overflow: hidden; height: 90px;">
+                        <?php echo $materi2['Desk']?>
                       </p>
                     
                       <div class="liner">
@@ -231,7 +277,7 @@
                       </div>
   
                     <div class="btn-n">
-                      <div> <img src="./Vector.svg" alt=""> </div>
+                      <div><a href=<?php echo "content.php?id=$materi2[id]"?>><img src="./img_land/Vector.svg" alt=""></a></div>
                     </div>
                   </div>
 
@@ -242,7 +288,7 @@
                     </div>
   
                     <div>
-                      <img class="im" src="./wallpaperflare.com_wallpaper(3).jpg" alt="">
+                      <img class="im" src="<?php echo $materi3['img_dir']?>" alt="">
                     </div>
   
                     <div class="strip">
@@ -250,16 +296,16 @@
                     </div>
   
                       <p class="his">
-                        History from japan
+                        History from <?php echo $materi3['Country']?>
                       </p>
 
                     
                       <h2 class="rev">
-                        MY REVOLUTIONARY <br> BULLSHITS ABOUT “ATOM”
+                        <?php echo strtoupper($materi3['Title'])?>
                       </h2>
 
-                      <p class="pr">
-                        Ingat Darah Keturunan Haisal Akan Mengalir ke anak cucunya dan dia akan tetap menjadi pengetroll bohong kalau tidak.
+                      <p class="pr" style="overflow: hidden; height: 90px;">
+                        <?php echo $materi3['Desk']?>
                       </p>
                     
                       <div class="liner">
@@ -267,7 +313,7 @@
                       </div>
   
                     <div class="btn-n">
-                      <div> <img src="./Vector.svg" alt=""> </div>
+                      <div> <a href=<?php echo "content.php?id=$materi3[id]"?>><img src="./img_land/Vector.svg" alt=""></a> </div>
                     </div>
                   </div>
 
@@ -276,7 +322,7 @@
                     </div>
   
                     <div>
-                      <img class="im" src="./wallpaperflare.com_wallpaper(3).jpg" alt="">
+                      <img class="im" src="<?php echo $materi4['img_dir']?>" alt="">
                     </div>
   
                     <div class="strip">
@@ -284,16 +330,16 @@
                     </div>
   
                       <p class="his">
-                        History from japan
+                        History from <?php echo $materi4['Country']?>
                       </p>
 
                     
                       <h2 class="rev">
-                        MY REVOLUTIONARY <br> BULLSHITS ABOUT “ATOM”
+                        <?php echo strtoupper($materi4['Title'])?>
                       </h2>
 
-                      <p class="pr">
-                        Ingat Darah Keturunan Haisal Akan Mengalir ke anak cucunya dan dia akan tetap menjadi pengetroll bohong kalau tidak.
+                      <p class="pr" style="overflow: hidden; height: 90px;">
+                        <?php echo $materi4['Desk']?>
                       </p>
                     
                       <div class="liner">
@@ -301,7 +347,7 @@
                       </div>
   
                     <div class="btn-n">
-                      <div> <img src="./Vector.svg" alt=""> </div>
+                      <div> <a href=<?php echo "content.php?id=$materi4[id]"?>><img src="./img_land/Vector.svg" alt=""></a></div>
                     </div>
                   </div>
 
@@ -310,7 +356,7 @@
                     </div>
   
                     <div>
-                      <img class="im" src="./wallpaperflare.com_wallpaper(3).jpg" alt="">
+                      <img class="im" src="<?php echo $materi5['img_dir']?>" alt="">
                     </div>
   
                     <div class="strip">
@@ -318,16 +364,16 @@
                     </div>
   
                       <p class="his">
-                        History from japan
+                        History from <?php echo $materi5['Country']?>
                       </p>
 
                     
                       <h2 class="rev">
-                        MY REVOLUTIONARY <br> BULLSHITS ABOUT “ATOM”
+                        <?php echo strtoupper($materi5['Title']) ?>
                       </h2>
 
-                      <p class="pr">
-                        Ingat Darah Keturunan Haisal Akan Mengalir ke anak cucunya dan dia akan tetap menjadi pengetroll bohong kalau tidak.
+                      <p class="pr" style="overflow: hidden; height: 90px;">
+                        <?php echo $materi5['Desk']?>
                       </p>
                     
                       <div class="liner">
@@ -335,7 +381,7 @@
                       </div>
   
                     <div class="btn-n">
-                      <div> <img src="./Vector.svg" alt=""> </div>
+                      <div><a href=<?php echo "content.php?id=$materi5[id]"?>><img src="./img_land/Vector.svg" alt=""></a></div>
                     </div>
                   </div>
 
@@ -346,13 +392,6 @@
                     </div>
                   </div>
 
-
-                  <div class="cr">
-                    <h4 class="crs">
-                      Lorem ipsum dolor sit amet, consectetur <span> adipiscing elit. </span> 
-                    </h4>
-                  </div>
-
                   <!-- About -->
 
                 <div class="about">
@@ -360,7 +399,7 @@
                   
                   <div>
                     <h1 class="abouts">
-                      About
+                      <?php echo $about['Hero']?>
                     </h1>
                   </div>
 
@@ -373,15 +412,15 @@
                   </div>
 
                   <div class="pars">
-                    <p class="par2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore at obcaecati perferendis iste error natus neque earum, sed accusantium!</p>
+                    <p class="par2" style="line-height: 20px;"><?php echo $about['sub_text']?></p>
                   </div>
 
                   <div class="pars">
-                    <p class="par3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. nisi!</p>
+                    <p class="par3" style="line-height: 20px;"><?php echo $about['li_1'] ?></p>
                   </div>
 
                   <div class="pars">
-                    <p class="par4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. nisi!</p>
+                    <p class="par4" style="line-height: 20px;"><?php echo $about['li_2']?></p>
                   </div>
 
                   <div class="el1">
@@ -392,14 +431,8 @@
                     <div></div>
                   </div>
 
-                  <div class="fts">
-                    <h4 class="ft">
-                       <span> Lorem ipsum dolor sit amet consectetur, </span>  adipisicing elit. 
-                      </h4>
-                    </div>
-
                   <div class="conb">
-                    <div> <img src="./anton-maksimov-5642-su-rr-o3AahhNQ-unsplash.jpg" alt=""> </div>
+                    <div> <img src="<?php echo $about['img_dir']?>" alt=""> </div>
                   </div>
 
                   <div class="rect">
@@ -423,7 +456,7 @@
 
                   <div>
                     <h1 class="history">
-                      History World 
+                      <?php echo $history['hero']?>
                     </h1>
                   </div>
 
@@ -432,27 +465,26 @@
                   </div>
 
                   <div class="parz">
-                    <p class="par7">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem molestias culpa ipsam quas eaque libero.
+                    <p class="par7" style="line-height: 25px;">
+                      <?php echo $history['paraf1']?>
                     </p>
                   </div>
 
                   <div class="smt">
                     <p class="somes">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing. 
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      <?php echo $history['paraf2']?>
                     </p>
                   </div>
                   
                  <div class="rect2">
-                  <div> <img src="./anton-maksimov-5642-su-rr-o3AahhNQ-unsplash.jpg" alt=""></div>
+                  <div> <img src="<?php echo $history['img_dir']?>" alt=""></div>
                  </div>
 
                  <div class="daily">
                   <div></div>
                   <div>
-                    <h1 class="dail">
-                      Daily Quotes
+                    <h1 class="dail" style="width: 600px;">
+                      <?php echo $quote['hero']?>
                     </h1>
 
                     <div class="lin">
@@ -461,7 +493,7 @@
 
                     <div>
                       <p class="partz">
-                        "Lebih baik menerima kejujuran yang pahit, dari pada kebohongan yang manis." - Soichiro Yagami 
+                        <?php echo $quote['quotes']?>
                       </p>
                     </div>
                   </div>
@@ -488,7 +520,7 @@
                             <a href="#">Blog</a>
                         </p>
             
-                        <p class="footer-company-name">Copyright © 2021 <strong>UPhone</strong> All rights reserved</p>
+                        <p class="footer-company-name">Copyright © 2021 <strong>DENSETSU</strong> All rights reserved</p>
                     </div>
             
                     <div class="footer-center">
@@ -504,16 +536,13 @@
                         </div>
                         <div>
                           <i class="uil uil-envelope"></i>
-                            <p><a href="mailto:sagar00001.co@gmail.com">uphone@service.com</a></p>
+                            <p><a href="mailto:sagar00001.co@gmail.com">DENSETSU@service.com</a></p>
                         </div>
                     </div>
                     <div class="footer-right">
                         <p class="footer-company-about">
                             <span>About the company</span>
-                            <strong>UPHone</strong> is a Youtube channel where you can find more creative CSS Animations
-                            and
-                            Effects along with
-                            HTML, JavaScript and Projects using C/C++.
+                            <strong>DENSETSU</strong> is a place for once learn about history of the world while being entertained
                         </p>
                         <div class="footer-icons">
                             <a href="#"><i class="uil uil-facebook"></i></a>

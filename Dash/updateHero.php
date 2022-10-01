@@ -2,18 +2,12 @@
     include 'connection.php';
 
     if(isset($_POST['submit'])) {
-        $id = $_POST['id'];
-        $title = $_POST['title'];
-        $short = $_POST['short'];
-        $category = $_POST['kategori'];
-        $author = $_POST['author'];
-        $date = $_POST['date'];
-        $isi = $_POST['isi'];
-        $lokasi = $_POST['negara'];
+        $hero = $_POST['hero'];
+        $sub = $_POST['Sub'];
 
         //get old data
 
-        $sqlOLD = "SELECT * FROM materi WHERE id = '$id'";
+        $sqlOLD = "SELECT * FROM hero WHERE id = 1";
         $queryOLD = mysqli_query($connect, $sqlOLD);
         $data = mysqli_fetch_array($queryOLD);
 
@@ -37,9 +31,9 @@
             if ($imgErr == 0) {
                 if(in_array($imgtype, $allowed)){
                     $imgNewName = uniqid('', true).".".$imgtype;
-                    $imgDIR = "./img_materi/".$imgNewName;
-                    $imgDIRRILL = "../img_materi/".$imgNewName;
-                    if ($imgDIROLD != "./img_materi/dummy.jpeg") {
+                    $imgDIR = "./img_hero/".$imgNewName;
+                    $imgDIRRILL = "../img_hero/".$imgNewName;
+                    if ($imgDIROLD != "./img_hero/dummy.jpeg") {
                         unlink($imgDIROLD);
                     }
                     move_uploaded_file($imgTMP, $imgDIRRILL);
@@ -53,11 +47,11 @@
             $imgDIR = $imgDIROLD;
         };
 
-        $sql = "UPDATE `materi` SET `Title`='$title',`kategori`='$category',`Desk`='$short',`Isi`='$isi',`author`='$author',`img_dir`='$imgDIR',`date`='$date',`Country` = '$lokasi' WHERE `id`='$id'";
+        $sql = "UPDATE `hero` SET `Hero`='$hero',`Sub_text`='$sub',`img_dir`='$imgDIR' WHERE id = 1";
         $query = mysqli_query($connect, $sql);
 
         if($query) {
-            header('Location: Materi.php');
+            header('Location: ../index.php');
         }else{
             header('Location: addUser.php?NotOK');
         }

@@ -1,0 +1,329 @@
+:root {
+    --accent: #fe662a;
+    --primary: #2b3138;
+    --secondary: #202329;
+    --text-primary: #fff;
+    --text_secondary: #ccc;
+    --text-bg: #252932;
+    --dark: #222831;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'M PLUS 1', sans-serif;
+    background-color: var(--text-primary);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 1589px;
+    height: 135px;
+    background-color: var(--text_secondary);
+    align-items: center;
+}
+
+.item {
+    text-decoration: none;
+    color: var(--secondary);
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+.item:hover {
+    text-decoration: none;
+    color: var(--accent);
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+.p1 {
+    margin-left: 65px;
+    font-size: 35px;
+    font-weight: 300;
+
+}
+
+.p2 {
+    margin-right: 65px;
+    background-color: #1e1e1e;
+    color: white;
+    width: 160px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    transition: 0.5s;
+}
+
+.p2:hover {
+    margin-right: 65px;
+    background-color: var(--accent);
+    color: #1e1e1e;
+    width: 160px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    /* box-shadow: 0 0 10px #f55421, 0 0 5px #f55421, 0 0 10px #f55421, 0 0 10px #f55421; */
+    transition: 0.5s;
+}
+.p2 a{
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.titlearc {
+    height: 200px;
+    width: 1589px;
+    background-color: #d9d9d9;
+    font-weight: 300;
+}
+
+.titlearc div {
+    position: absolute;
+    left: 1140px;
+    top: 170px;
+}
+
+.titlearc p {
+    margin-top: 0px;
+    position: absolute;
+    left: 317px;
+    top: 170px;
+    font-weight: 400;
+}
+
+.redirect {
+    margin: 0px 10px 0px 0px;
+    color: #1e1e1e;
+    font-size: 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.redirect:hover {
+    margin: 0px 10px 0px 0px;
+    color: #f55421;
+    font-size: 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.conteks {
+    position: relative;
+    top: -35px;
+    display: flex;
+    flex-direction: column;
+    width: 1589px;
+    align-items: center;
+}
+
+.conteks p {
+    margin-left: 50px;
+    max-width: 78%;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.judul{
+    margin-left: 45%;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card{
+    background-color: var(--text_secondary) ;    
+    width: 320px;
+    height: 500px;
+    margin: 50px 100px;
+
+}
+.card-image{
+    height: 250px;
+    background-color: aqua;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.card p{
+    height: 70px;
+    overflow: hidden;
+}
+
+.card a{
+    background-color: #1e1e1e;
+    color: white;
+    padding: 10px 5px;
+    display: block;
+    margin: 20px 50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+}
+.footer-distributed {
+    background-color: var(--secondary);
+    position: absolute;
+    top: 2400px;
+    box-sizing: border-box;
+    width: 1589px;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+    margin-top: 40px;
+    overflow-y: hidden;
+}
+
+.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+    width: 30%;
+}
+
+.footer-distributed h3 {
+    color: var(--text-primary);
+    margin: 0;
+}
+
+
+.footer-distributed h3 span {
+    color: var(--text-primary);
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+    color: var(--text-primary);
+    margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    background-color: var(--secondary);
+    color: var(--text-primary);
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    text-align: center;
+    line-height: 50px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: var(--text-primary);
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: var(--accent);
+    text-decoration: none;
+    ;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+    width: 30%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: var(--primary);
+    border-radius: 2px;
+    font-size: 20px;
+    color: var(--text-primary);
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a:hover {
+    background-color: var(--accent);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}

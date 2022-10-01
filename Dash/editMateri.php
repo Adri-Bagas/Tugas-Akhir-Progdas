@@ -142,7 +142,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="dlabnav">
+		<div class="dlabnav">
             <div class="dlabnav-scroll">
 				<ul class="metismenu" id="menu">
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
@@ -166,9 +166,7 @@
                         <ul aria-expanded="false">
                             <li><a href="formUsers.php">User Form</a></li>
                             <li><a href="formMateri.php">Materi Form</a></li>
-                            <li><a href="#">Form2</a></li>
-                            <li><a href="#">Form5</a></li>
-                            <li><a href="#">Form4</a></li>
+                            <li><a href="formDaily.php">Daily Quotes</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
@@ -178,8 +176,19 @@
                         <ul aria-expanded="false">
                             <li><a href="User.php">User</a></li>
                             <li><a href="Materi.php">Materi</a></li>
+							<li><a href="Daily.php">Daily Quotes</a></li>
                         </ul>
                     </li>
+					<li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+						<i class="fas fa-file-alt"></i>
+						<span class="nav-text">Change</span>
+					</a>
+					<ul aria-expanded="false">
+						<li><a href="changeHero.php">Hero</a></li>
+						<li><a href="changeAbout.php">About</a></li>
+						<li><a href="changeHistory.php">World History</a></li>
+					</ul>
+				</li>
 
 				<div class="side-bar-profile">
 					<div class="d-flex align-items-center justify-content-between mb-3">
@@ -256,6 +265,10 @@
 										<div class="ownForm">
 											<h5>Author</h5>
 											<input type="text" class="form-control input-default" placeholder="Author" name="author" value="<?php echo $data['author']?>">
+										</div>
+										<div class="ownForm">
+											<h5>Country</h5>
+											<input type="text" class="form-control input-default" placeholder="Country" name="negara" value="<?php echo $data['Country']?>">
 										</div>
                                         <div class="ownForm">
 											<h5>Date</h5>

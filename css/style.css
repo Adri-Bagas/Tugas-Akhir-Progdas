@@ -76,6 +76,8 @@ ul {
   width: 90vw;
 }
 
+
+
 .line {
   position: absolute;
   width: 1px;
@@ -567,8 +569,8 @@ color: #636363;
 }
 
 .rev {
-  position: absolute;
-width: 325px;
+  position: relative;
+width: 275px;
 height: 46px;
 top: 480px;
 left: 140px;

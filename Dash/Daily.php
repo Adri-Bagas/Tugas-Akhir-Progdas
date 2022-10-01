@@ -1,11 +1,5 @@
 <?php
 	include 'connection.php';
-
-    $id  = $_GET['id'];
-
-    $sql = "SELECT * FROM users WHERE id_user = '$id'";
-    $query = mysqli_query($connect, $sql);
-    $data = mysqli_fetch_array($query);
 ?>
 
 
@@ -230,8 +224,8 @@
             <div class="container-fluid">
 				<div class="row page-titles">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)"><?php echo $data['id_user'] ?></a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Table</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Bootstrap</a></li>
 					</ol>
                 </div>
                 
@@ -239,22 +233,49 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"><?php echo $data['name'] ?></h4>
+                                <h4 class="card-title">User</h4>
                             </div>
                             <div class="card-body">
-                                <div style="display:flex; justify-content: space-around ; align-items:center ; width: 100%;">
-                                <img src="<?php echo $data['user_img'] ?>" style="width: 400px;"></img>
-                                <div style="width: 400px;">
-                                    <div>
-                                    <h3>id : <?php echo $data['id_user'] ?></h3>
-                                    <h3>Name : <?php echo $data['name'] ?></h3>
-                                    <h3>Birth : <?php echo $data['birth'] ?></h3>
-                                    <h3>Password : <?php echo $data['password'] ?></h3>
-                                    <h3>Phone : <?php echo $data['phone'] ?></h3>
-                                    <h3>Email : <?php echo $data['email'] ?></h3>
-                                    </div>
-									<a type="submit" class="btn btn-primary mb-2" style="padding: 5px 25px; font-size: 14pt;top:40px; left: 120px; position:relative; margin-right:20px;">Edit</a>
-                                    <a type="submit" class="btn btn-primary mb-2" style="padding: 5px 25px; font-size: 14pt;top:40px; left: 120px; position:relative;">Go Back</a>
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:80px;"><strong>#</strong></th>
+                                                <th><strong>Hero</strong></th>
+                                                <th><strong>Quotes</strong></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+											<?php
+                                            $sql = "SELECT * FROM daily";
+											$query = mysqli_query($connect, $sql);
+											$i = 1;
+											while($data = mysqli_fetch_array($query)) {
+
+												$i_inc = $i++;
+
+												echo "
+												<tr>
+                                                <td><strong>$i_inc</strong></td>
+                                                <td>$data[hero]</td>
+                                                <td>$data[quotes]</td>
+                                                <td>
+													<div class='dropdown'>
+														<button type='button' class='btn light sharp' data-bs-toggle='dropdown'>
+															<svg width='20px' height='20px' viewbox='0 0 24 24' version='1.1'><g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><rect x='0' y='0' width='24' height='24'></rect><circle fill='#000000' cx='5' cy='12' r='2'></circle><circle fill='#000000' cx='12' cy='12' r='2'></circle><circle fill='#000000' cx='19' cy='12' r='2'></circle></g></svg>
+														</button>
+														<div class='dropdown-menu'>
+															<a class='dropdown-item' href='editDaily.php?id=$data[id]'>Edit</a>
+															<a class='dropdown-item' href='hapusDaily.php?id=$data[id]'>Delete</a>
+														</div>
+													</div>
+												</td>
+                                            </tr>";
+											}
+											?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

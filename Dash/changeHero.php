@@ -1,9 +1,7 @@
 <?php
-	include 'connection.php';
-
-    $id  = $_GET['id'];
-
-    $sql = "SELECT * FROM users WHERE id_user = '$id'";
+    include 'connection.php';
+    
+    $sql = 'SELECT * FROM hero WHERE id = 1';
     $query = mysqli_query($connect, $sql);
     $data = mysqli_fetch_array($query);
 ?>
@@ -230,37 +228,45 @@
             <div class="container-fluid">
 				<div class="row page-titles">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)"><?php echo $data['id_user'] ?></a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Form</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Bootstrap</a></li>
 					</ol>
                 </div>
                 
-                <div class="row">
+				<div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"><?php echo $data['name'] ?></h4>
-                            </div>
-                            <div class="card-body">
-                                <div style="display:flex; justify-content: space-around ; align-items:center ; width: 100%;">
-                                <img src="<?php echo $data['user_img'] ?>" style="width: 400px;"></img>
-                                <div style="width: 400px;">
-                                    <div>
-                                    <h3>id : <?php echo $data['id_user'] ?></h3>
-                                    <h3>Name : <?php echo $data['name'] ?></h3>
-                                    <h3>Birth : <?php echo $data['birth'] ?></h3>
-                                    <h3>Password : <?php echo $data['password'] ?></h3>
-                                    <h3>Phone : <?php echo $data['phone'] ?></h3>
-                                    <h3>Email : <?php echo $data['email'] ?></h3>
-                                    </div>
-									<a type="submit" class="btn btn-primary mb-2" style="padding: 5px 25px; font-size: 14pt;top:40px; left: 120px; position:relative; margin-right:20px;">Edit</a>
-                                    <a type="submit" class="btn btn-primary mb-2" style="padding: 5px 25px; font-size: 14pt;top:40px; left: 120px; position:relative;">Go Back</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+								<h4 class="card-title">Form</h4>
+							</div>
+							<div class="card-body">
+								<div class="basic-form">
+									<form action="updateHero.php" method="POST" enctype="multipart/form-data">
+										<div>
+											<h5>Hero</h5>
+											<input type="text" class="form-control input-default " placeholder="Hero" name="hero" value="<?php echo $data['Hero']?>">
+										</div>
+										<div class="ownForm">
+											<h5>Sub Text</h5>
+											<textarea class="form-control" rows="4" id="comment" name="Sub"><?php echo $data['Sub_text']?></textarea>
+										</div>
+                                        <div class="ownForm">
+											<h5>img</h5>
+                                            <input type="file" name="img" class="form-file-input form-control">
+										</div>
+										<div>
+											<h4>Old Img</h4>
+											<img src="<?php echo ".".$data['img_dir']?>" style="height: 300px;">
+										</div>
+										<div class="col-12" style="margin-left: 75%; margin-top: 30px;">
+											<input type="submit" class="btn btn-primary mb-2" style="padding: 5px 40px; font-size: 14pt;" name="submit">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
             </div>
         </div>
         <!--**********************************
@@ -300,9 +306,13 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="vendor/global/global.min.js"></script>
-	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="vendor/global/global.min.js"></script>
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	
+	<script src="vendor/ckeditor/ckeditor.js"></script>
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
 	
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
@@ -315,11 +325,11 @@
 	<script src="js/dashboard/dashboard-1.js"></script>
 	
 	<script src="vendor/owl-carousel/owl.carousel.js"></script>
+    <script src="js/styleSwitcher.js"></script>
 	
     <script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
-    <script src="js/styleSwitcher.js"></script>
 	<script>
 		function cardsCenter()
 		{
