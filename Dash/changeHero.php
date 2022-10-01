@@ -228,8 +228,8 @@
             <div class="container-fluid">
 				<div class="row page-titles">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Form</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Bootstrap</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Edit</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Hero</a></li>
 					</ol>
                 </div>
                 
@@ -244,11 +244,11 @@
 									<form action="updateHero.php" method="POST" enctype="multipart/form-data">
 										<div>
 											<h5>Hero</h5>
-											<input type="text" class="form-control input-default " placeholder="Hero" name="hero" value="<?php echo $data['Hero']?>">
+											<input type="text" class="form-control input-default " placeholder="Hero" name="hero" value="<?php echo $data['Hero']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Sub Text</h5>
-											<textarea class="form-control" rows="4" id="comment" name="Sub"><?php echo $data['Sub_text']?></textarea>
+											<textarea class="form-control" rows="4" id="comment" name="Sub" required><?php echo $data['Sub_text']?></textarea>
 										</div>
                                         <div class="ownForm">
 											<h5>img</h5>

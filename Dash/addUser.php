@@ -43,7 +43,7 @@
             $imgDIR = "../user_img/user.png";
         };
 
-        $sql = "INSERT INTO `users`(`id_user`, `name`, `birth`, `password`, `phone`, `email`, `user_img`) VALUES ('$id_user','$nama','$birth','$password','$phone','$email','$imgDIR')";
+        $sql = 'INSERT INTO `users`(`id_user`, `name`, `birth`, `password`, `phone`, `email`, `user_img`) VALUES ("'.$id_user.'","'.$nama.'","'.$birth.'","'.$password.'","'.$phone.'","'.$email.'","'.$imgDIR.'")';
         $query = mysqli_query($connect, $sql);
 
         if($query) {

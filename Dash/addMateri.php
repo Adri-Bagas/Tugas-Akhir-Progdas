@@ -12,7 +12,7 @@
 
         // uniq id
 
-        $id_materi = uniqid("U", false);
+        $id_materi = uniqid("M", false);
 
         //img upload
 
@@ -45,7 +45,7 @@
             $imgDIR = "../materi_img/dummy.jpeg";
         };
 
-        $sql = "INSERT INTO `materi`(`Title`, `kategori`, `Desk`, `Isi`, `author`, `img_dir`, `id`, `date`,`Country`) VALUES ('$title','$category','$short','$isi','$author','$imgDIR','$id_materi','$date','$lokasi')";
+        $sql = 'INSERT INTO `materi`(`Title`, `kategori`, `Desk`, `Isi`, `author`, `img_dir`, `id`, `date`,`Country`) VALUES ("'.$title.'","'.$category.'","'.$short.'","'.$isi.'","'.$author.'","'.$imgDIR.'","'.$id_materi.'","'.$date.'","'.$lokasi.'")';
         $query = mysqli_query($connect, $sql);
 
         if($query) {

@@ -51,7 +51,7 @@
             $imgDIR = $imgDIROLD;
         };
 
-        $sql = "UPDATE `users` SET `name`='$nama',`birth`='$birth',`password`='$password',`phone`='$phone',`email`='$email',`user_img`='$imgDIR' WHERE id_user = '$id'";
+        $sql = 'UPDATE `users` SET `name`="'.$nama.'",`birth`="'.$birth.'",`password`="'.$password.'",`phone`="'.$phone.'",`email`="'.$email.'",`user_img`="'.$imgDIR.'" WHERE id_user = "'.$id.'"';
         $query = mysqli_query($connect, $sql);
 
         if($query) {

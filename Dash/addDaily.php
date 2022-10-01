@@ -6,7 +6,7 @@ include 'connection.php';
         $hero = $_POST['hero'];
         $quotes = $_POST['quotes'];
 
-        $sql = "INSERT INTO `daily`(`hero`, `quotes`) VALUES ('$hero','$quotes')";
+        $sql = 'INSERT INTO `daily`(`hero`, `quotes`) VALUES ("'.$hero.'","'.$quotes.'")';
         $query = mysqli_query($connect, $sql);
 
         if($query) {

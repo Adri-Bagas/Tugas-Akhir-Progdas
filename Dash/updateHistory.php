@@ -46,7 +46,7 @@
                     $imgDIR = $imgDIROLD;
                 };
         
-                $sql = "UPDATE `history` SET `hero`='$hero',`paraf1`='$paraf1',`paraf2`='$paraf2',`img_dir`='$imgDIR' WHERE id = 1";
+                $sql = 'UPDATE `history` SET `hero`="'.$hero.'",`paraf1`="'.$paraf1.'",`paraf2`="'.$paraf2.'",`img_dir`="'.$imgDIR.'" WHERE id = 1';
                 $query = mysqli_query($connect, $sql);
         
                 if($query) {

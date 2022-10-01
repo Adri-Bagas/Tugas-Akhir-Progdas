@@ -220,7 +220,7 @@
 				<div class="row page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item active"><a href="javascript:void(0)">Form</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Materi</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Daily</a></li>
 					</ol>
                 </div>
                 
@@ -235,11 +235,11 @@
 									<form action="addDaily.php" method="POST" enctype="multipart/form-data">
                                     <div>
 											<h5>Hero</h5>
-											<input type="text" class="form-control input-default" placeholder="Title" name="hero">
+											<input type="text" class="form-control input-default" placeholder="Title" name="hero" required>
 										</div>
 										<div class="ownForm">
 											<h5>quotes</h5>
-											<textarea class="form-control" rows="4" id="comment" name="quotes"></textarea>
+											<textarea class="form-control" rows="4" id="comment" name="quotes" required></textarea>
 										</div>
 										<div class="col-12" style="margin-left: 75%; margin-top: 30px;">
 											<input type="submit" class="btn btn-primary mb-2" style="padding: 5px 40px; font-size: 14pt;" name="submit">

@@ -3,7 +3,7 @@
 include 'connection.php';
 $id = $_GET['id'];
 
-$sqlOLD = "SELECT * FROM user WHERE id_user = '$id'";
+$sqlOLD = "SELECT * FROM users WHERE id_user = '$id'";
 $query2 = mysqli_query($connect,$sqlOLD);
 $data = mysqli_fetch_array($query2);
 
@@ -14,7 +14,7 @@ if($img != "../user_img/user.png") {
 }
 
 
-$sql = "DELETE FROM user WHERE id_user = '$id'";
+$sql = "DELETE FROM users WHERE id_user = '$id'";
 $query = mysqli_query($connect,$sql);
 
 

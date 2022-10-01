@@ -235,31 +235,31 @@
 									<form action="addMateri.php" method="POST" enctype="multipart/form-data">
 										<div>
 											<h5>Title</h5>
-											<input type="text" class="form-control input-default" placeholder="Title" name="title">
+											<input type="text" class="form-control input-default" placeholder="Title" name="title" required>
 										</div>
 										<div class="ownForm">
 											<h5>Short</h5>
-											<input type="text" class="form-control input-default" placeholder="Short" name="short">
+											<input type="text" class="form-control input-default" placeholder="Short" name="short" required>
 										</div>
 										<div class="ownForm">
 											<h5>Category</h5>
-											<input type="text" class="form-control input-default" placeholder="Category" name="kategori">
+											<input type="text" class="form-control input-default" placeholder="Category" name="kategori" required>
 										</div>
 										<div class="ownForm">
 											<h5>Author</h5>
-											<input type="text" class="form-control input-default" placeholder="Author" name="author">
+											<input type="text" class="form-control input-default" placeholder="Author" name="author" required>
 										</div>
 										<div class="ownForm">
 											<h5>Country</h5>
-											<input type="text" class="form-control input-default" placeholder="Country" name="negara">
+											<input type="text" class="form-control input-default" placeholder="Country" name="negara" required>
 										</div>
                                         <div class="ownForm">
 											<h5>Date</h5>
-											<input type="date" class="form-control input-default" name="date">
+											<input type="date" class="form-control input-default" name="date" required>
 										</div>
 										<div class="ownForm">
 											<h5>Isi</h5>
-											<textarea class="form-control" rows="4" id="comment" name="isi"></textarea>
+											<textarea class="form-control" rows="4" id="comment" name="isi" required></textarea>
 										</div>
                                         <div class="ownForm">
 											<h5>Key img</h5>

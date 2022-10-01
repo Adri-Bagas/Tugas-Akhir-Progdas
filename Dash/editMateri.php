@@ -232,7 +232,7 @@
             <div class="container-fluid">
 				<div class="row page-titles">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Form</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Edit</a></li>
 						<li class="breadcrumb-item"><a href="javascript:void(0)">Materi</a></li>
 					</ol>
                 </div>
@@ -252,31 +252,31 @@
                                         </div>
 										<div class="ownForm">
 											<h5>Title</h5>
-											<input type="text" class="form-control input-default" placeholder="Title" name="title" value="<?php echo $data['Title']?>">
+											<input type="text" class="form-control input-default" placeholder="Title" name="title" value="<?php echo $data['Title']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Short</h5>
-											<input type="text" class="form-control input-default" placeholder="Short" name="short" value="<?php echo $data['Desk']?>">
+											<input type="text" class="form-control input-default" placeholder="Short" name="short" value="<?php echo $data['Desk']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Category</h5>
-											<input type="text" class="form-control input-default" placeholder="Category" name="kategori" value="<?php echo $data['kategori']?>">
+											<input type="text" class="form-control input-default" placeholder="Category" name="kategori" value="<?php echo $data['kategori']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Author</h5>
-											<input type="text" class="form-control input-default" placeholder="Author" name="author" value="<?php echo $data['author']?>">
+											<input type="text" class="form-control input-default" placeholder="Author" name="author" value="<?php echo $data['author']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Country</h5>
-											<input type="text" class="form-control input-default" placeholder="Country" name="negara" value="<?php echo $data['Country']?>">
+											<input type="text" class="form-control input-default" placeholder="Country" name="negara" value="<?php echo $data['Country']?>" required>
 										</div>
                                         <div class="ownForm">
 											<h5>Date</h5>
-											<input type="date" class="form-control input-default" name="date" value="<?php echo $data['date']?>">
+											<input type="date" class="form-control input-default" name="date" value="<?php echo $data['date']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Isi</h5>
-											<textarea class="form-control" rows="4" id="comment" name="isi"><?php echo $data['Isi']?></textarea>
+											<textarea class="form-control" rows="4" id="comment" name="isi" required><?php echo $data['Isi']?></textarea>
 										</div>
                                         <div class="ownForm">
 											<h5>Key img</h5>

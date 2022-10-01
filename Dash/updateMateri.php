@@ -53,7 +53,7 @@
             $imgDIR = $imgDIROLD;
         };
 
-        $sql = "UPDATE `materi` SET `Title`='$title',`kategori`='$category',`Desk`='$short',`Isi`='$isi',`author`='$author',`img_dir`='$imgDIR',`date`='$date',`Country` = '$lokasi' WHERE `id`='$id'";
+        $sql = 'UPDATE `materi` SET `Title`="'.$title.'",`kategori`="'.$category.'",`Desk`="'.$short.'",`Isi`="'.$isi.'",`author`="'.$author.'",`img_dir`="'.$imgDIR.'",`date`="'.$date.'",`Country` = "'.$lokasi.'" WHERE `id`="'.$id.'"';
         $query = mysqli_query($connect, $sql);
 
         if($query) {

@@ -220,7 +220,7 @@
 				<div class="row page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item active"><a href="javascript:void(0)">Form</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Bootstrap</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
 					</ol>
                 </div>
                 
@@ -235,23 +235,23 @@
 									<form action="addUser.php" method="POST" enctype="multipart/form-data">
 										<div>
 											<h5>Name</h5>
-											<input type="text" class="form-control input-default " placeholder="Name" name="nama">
+											<input type="text" class="form-control input-default " placeholder="Name" name="nama" required>
 										</div>
 										<div class="ownForm">
 											<h5>Birth</h5>
-											<input type="date" class="form-control input-default " name="birth">
+											<input type="date" class="form-control input-default " name="birth" required>
 										</div>
 										<div class="ownForm">
 											<h5>Password</h5>
-											<input type="text" class="form-control input-default " placeholder="Password" name="password">
+											<input type="text" class="form-control input-default " placeholder="Password" name="password" required>
 										</div>
 										<div class="ownForm">
 											<h5>Phone</h5>
-											<input type="text" class="form-control input-default " placeholder="Phone Number" name="phone">
+											<input type="text" class="form-control input-default " placeholder="Phone Number" name="phone" required>
 										</div>
 										<div class="ownForm">
 											<h5>Email</h5>
-											<input type="text" class="form-control input-default " placeholder="Email" name="email">
+											<input type="text" class="form-control input-default " placeholder="Email" name="email" required>
 										</div>
                                         <div class="ownForm">
 											<h5>Profile</h5>

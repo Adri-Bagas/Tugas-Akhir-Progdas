@@ -231,8 +231,8 @@
             <div class="container-fluid">
 				<div class="row page-titles">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Form</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Bootstrap</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Edit</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
 					</ol>
                 </div>
                 
@@ -247,27 +247,27 @@
 									<form action="updateUser.php" method="POST" enctype="multipart/form-data">
 										<div>
 											<h5>Id</h5>
-											<input type="text" class="form-control input-default " placeholder="id" name="id" value="<?php echo $data['id_user']?>">
+											<input type="text" class="form-control input-default " placeholder="id" name="id" value="<?php echo $data['id_user']?>" readonly>
 										</div>
 										<div>
 											<h5>Name</h5>
-											<input type="text" class="form-control input-default " placeholder="Name" name="nama" value="<?php echo $data['name'] ?>">
+											<input type="text" class="form-control input-default " placeholder="Name" name="nama" value="<?php echo $data['name'] ?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Birth</h5>
-											<input type="date" class="form-control input-default " name="birth" value="<?php echo $data['birth']?>">
+											<input type="date" class="form-control input-default " name="birth" value="<?php echo $data['birth']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Password</h5>
-											<input type="text" class="form-control input-default " placeholder="Password" name="password" value="<?php echo $data['password']?>">
+											<input type="text" class="form-control input-default " placeholder="Password" name="password" value="<?php echo $data['password']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Phone</h5>
-											<input type="text" class="form-control input-default " placeholder="Phone Number" name="phone" value="<?php echo $data['phone']?>">
+											<input type="text" class="form-control input-default " placeholder="Phone Number" name="phone" value="<?php echo $data['phone']?>" required>
 										</div>
 										<div class="ownForm">
 											<h5>Email</h5>
-											<input type="text" class="form-control input-default " placeholder="Email" name="email" value="<?php echo $data['email']?>">
+											<input type="text" class="form-control input-default " placeholder="Email" name="email" value="<?php echo $data['email']?>" required>
 										</div>
                                         <div class="ownForm">
 											<h5>Profile</h5>

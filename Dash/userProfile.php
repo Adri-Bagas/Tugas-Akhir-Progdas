@@ -253,8 +253,8 @@
                                     <h3>Phone : <?php echo $data['phone'] ?></h3>
                                     <h3>Email : <?php echo $data['email'] ?></h3>
                                     </div>
-									<a type="submit" class="btn btn-primary mb-2" style="padding: 5px 25px; font-size: 14pt;top:40px; left: 120px; position:relative; margin-right:20px;">Edit</a>
-                                    <a type="submit" class="btn btn-primary mb-2" style="padding: 5px 25px; font-size: 14pt;top:40px; left: 120px; position:relative;">Go Back</a>
+									<a href='<?php echo "editUser.php?id=$data[id_user]"?>' class="btn btn-primary mb-2" style="padding: 5px 25px; font-size: 14pt;top:40px; left: 120px; position:relative; margin-right:20px;">Edit</a>
+                                    <a href="User.php" class="btn btn-primary mb-2" style="padding: 5px 25px; font-size: 14pt;top:40px; left: 120px; position:relative;">Go Back</a>
                                 </div>
                             </div>
                         </div>
