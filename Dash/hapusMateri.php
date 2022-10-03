@@ -9,8 +9,10 @@ $data = mysqli_fetch_array($query2);
 
 $img = $data['img_dir'];
 
-if($img != "../materi_img/dummy.png") {
-  unlink($img);
+$imgDIRRILL = ".".$img ;
+
+if($img != "./materi_img/dummy.png") {
+  unlink($imgDIRRILL);
 }
 
 

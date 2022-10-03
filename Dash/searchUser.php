@@ -1,5 +1,7 @@
 <?php
 	include 'connection.php';
+
+    $search = $_GET['search'];
 ?>
 
 
@@ -98,8 +100,8 @@
                         <ul class="navbar-nav header-right">
 							<li class="nav-item d-flex align-items-center">
 								<div class="input-group search-area">
-									<input type="text" class="form-control" placeholder="Search here..." id="search2">
-									<span class="input-group-text"><a onclick="search2()"><i class="flaticon-381-search-2"></i></a></span>
+									<input type="text" class="form-control" placeholder="Search here..." id="search1" value="<?php echo $search ?>">
+									<span class="input-group-text"><a onclick="search1()"><i class="flaticon-381-search-2"></i></a></span>
 								</div>
 							</li>
 							
@@ -225,7 +227,7 @@
 				<div class="row page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item active"><a href="javascript:void(0)">Table</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Materi</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
 					</ol>
                 </div>
                 
@@ -241,17 +243,17 @@
                                         <thead>
                                             <tr>
                                                 <th style="width:80px;"><strong>#</strong></th>
-                                                <th><strong>Title</strong></th>
-                                                <th><strong>Short</strong></th>
-                                                <th><strong>Category</strong></th>
-                                                <th><strong>Date</strong></th>
-                                                <th><strong>Author</strong></th>
+                                                <th><strong>User</strong></th>
+                                                <th><strong>Birth</strong></th>
+                                                <th><strong>Password</strong></th>
+                                                <th><strong>Phone No</strong></th>
+                                                <th><strong>Email</strong></th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
 											<?php
-                                            $sql = "SELECT * FROM materi";
+                                            $sql = "SELECT * FROM users WHERE `name` LIKE '%$search%' OR `email` LIKE '%$search%' OR `phone` LIKE '%$search%'";
 											$query = mysqli_query($connect, $sql);
 											$i = 1;
 											while($data = mysqli_fetch_array($query)) {
@@ -261,19 +263,19 @@
 												echo "
 												<tr>
                                                 <td><strong>$i_inc</strong></td>
-                                                <td><a href='#'>$data[Title]</a></td>
-                                                <td>$data[Desk]</td>
-                                                <td>$data[kategori]</td>
-                                                <td>$data[date]</td>
-                                                <td>$data[author]</td>
+                                                <td><a href='userProfile.php?id=$data[id_user]'>$data[name]</a></td>
+                                                <td>$data[birth]</td>
+                                                <td>$data[password]</td>
+                                                <td>$data[phone]</td>
+                                                <td>$data[email]</td>
                                                 <td>
 													<div class='dropdown'>
 														<button type='button' class='btn light sharp' data-bs-toggle='dropdown'>
 															<svg width='20px' height='20px' viewbox='0 0 24 24' version='1.1'><g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><rect x='0' y='0' width='24' height='24'></rect><circle fill='#000000' cx='5' cy='12' r='2'></circle><circle fill='#000000' cx='12' cy='12' r='2'></circle><circle fill='#000000' cx='19' cy='12' r='2'></circle></g></svg>
 														</button>
 														<div class='dropdown-menu'>
-															<a class='dropdown-item' href='editMateri.php?id=$data[id]'>Edit</a>
-															<a class='dropdown-item' href='hapusMateri.php?id=$data[id]'>Delete</a>
+															<a class='dropdown-item' href='editUser.php?id=$data[id_user]'>Edit</a>
+															<a class='dropdown-item' href='hapusUser.php?id=$data[id_user]'>Delete</a>
 														</div>
 													</div>
 												</td>
@@ -347,7 +349,7 @@
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
-	<script src="./search.js"></script>
+	<script src="search.js"></script>
 	<script>
 		function cardsCenter()
 		{

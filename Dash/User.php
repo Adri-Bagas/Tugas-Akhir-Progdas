@@ -98,8 +98,8 @@
                         <ul class="navbar-nav header-right">
 							<li class="nav-item d-flex align-items-center">
 								<div class="input-group search-area">
-									<input type="text" class="form-control" placeholder="Search here...">
-									<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
+									<input type="text" class="form-control" placeholder="Search here..." id="search1">
+									<span class="input-group-text"><a onclick="search1()"><i class="flaticon-381-search-2"></i></a></span>
 								</div>
 							</li>
 							
@@ -347,6 +347,7 @@
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
+	<script src="search.js"></script>
 	<script>
 		function cardsCenter()
 		{

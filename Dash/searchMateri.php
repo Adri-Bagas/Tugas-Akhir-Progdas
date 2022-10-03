@@ -1,5 +1,7 @@
 <?php
 	include 'connection.php';
+
+    $search = $_GET['search'];
 ?>
 
 
@@ -98,7 +100,7 @@
                         <ul class="navbar-nav header-right">
 							<li class="nav-item d-flex align-items-center">
 								<div class="input-group search-area">
-									<input type="text" class="form-control" placeholder="Search here..." id="search2">
+									<input type="text" class="form-control" placeholder="Search here..." id="search2" value="<?php echo $search ?>">
 									<span class="input-group-text"><a onclick="search2()"><i class="flaticon-381-search-2"></i></a></span>
 								</div>
 							</li>
@@ -251,7 +253,7 @@
                                         </thead>
                                         <tbody>
 											<?php
-                                            $sql = "SELECT * FROM materi";
+                                            $sql = "SELECT * FROM materi WHERE Title LIKE '%$search%' OR kategori LIKE '%$search%' OR author LIKE '%$search%' OR date LIKE '%$search%'";
 											$query = mysqli_query($connect, $sql);
 											$i = 1;
 											while($data = mysqli_fetch_array($query)) {
